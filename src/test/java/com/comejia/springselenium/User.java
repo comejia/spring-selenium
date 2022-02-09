@@ -17,4 +17,10 @@ public class User {
         System.out.println("Address: " + this.address.getStreet());
         System.out.println("Salary: " + this.salary.getAmount());
     }
+
+    public void printDefaultValues() {
+        System.out.println("Address: " + this.address.getAddress());
+        System.out.println("Price: " + this.salary.getPrice());
+        System.out.println("IVA: " + this.salary.getIva());
+    }
 }

@@ -26,6 +26,8 @@ class SpringSeleniumApplicationTests {
     private int timeout;
     @Value("${username}")
     private String username;
+    @Value("${TEST_URL:https://www.google.com}")
+    private String url;
 
 	@Test
     @DisplayName("Dependency injection whitout Spring")
@@ -62,6 +64,14 @@ class SpringSeleniumApplicationTests {
         System.out.println(this.fruits);
         System.out.println(this.timeout);
         System.out.println(this.username);
+        System.out.println(this.url);
+    }
+
+    @Test
+    @DisplayName("Default value injection")
+    void defaultValueInjection() {
+        System.out.println(this.url);
+        user.printDefaultValues();
     }
 
 }
