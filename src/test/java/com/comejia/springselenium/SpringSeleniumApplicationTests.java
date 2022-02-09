@@ -1,5 +1,6 @@
 package com.comejia.springselenium;
 
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ class SpringSeleniumApplicationTests {
     private String username;
     @Value("${TEST_URL:https://www.google.com}")
     private String url;
+
+    @Autowired
+    private Faker faker;
 
 	@Test
     @DisplayName("Dependency injection whitout Spring")
@@ -72,6 +76,13 @@ class SpringSeleniumApplicationTests {
     void defaultValueInjection() {
         System.out.println(this.url);
         user.printDefaultValues();
+    }
+
+    @Test
+    @DisplayName("Injection to external object")
+    void injectionToOtherObject() {
+        //Faker faker = new Faker();
+        System.out.println(faker.name().firstName());
     }
 
 }
