@@ -33,6 +33,9 @@ class SpringSeleniumApplicationTests {
     @Autowired
     private Faker faker;
 
+    @Autowired
+    private Television tv;
+
 	@Test
     @DisplayName("Dependency injection whitout Spring")
 	void injectionWhitoutSpring() {
@@ -83,6 +86,13 @@ class SpringSeleniumApplicationTests {
     void injectionToOtherObject() {
         //Faker faker = new Faker();
         System.out.println(faker.name().firstName());
+    }
+
+    @Test
+    @DisplayName("Injection to external object")
+    void postConstructAndPreDestroy() {
+        //Faker faker = new Faker();
+        this.tv.playMovie();
     }
 
 }
