@@ -3,4 +3,4 @@
 Uso de SpringBoot en pruebas automatizadas
 
 ## Creacion de proyecto
-[https://start.spring.io/](spring starter)
+* [spring starter](https://start.spring.io/)

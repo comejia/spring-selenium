@@ -3,7 +3,10 @@ package com.comejia.springselenium;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
 
 @SpringBootTest
 class SpringSeleniumApplicationTests {
@@ -14,6 +17,15 @@ class SpringSeleniumApplicationTests {
     private User2 user2;
     @Autowired
     private User3 user3;
+
+    @Value("${PATH}")
+    private String path;
+    @Value("${fruits}")
+    private List<String> fruits;
+    @Value("${timeout}")
+    private int timeout;
+    @Value("${username}")
+    private String username;
 
 	@Test
     @DisplayName("Dependency injection whitout Spring")
@@ -41,6 +53,15 @@ class SpringSeleniumApplicationTests {
     @DisplayName("Dependency injection using fields")
     void fieldInjection() {
         user3.printDetails();
+    }
+
+    @Test
+    @DisplayName("Simple value injection")
+    void valueInjection() {
+        System.out.println(this.path);
+        System.out.println(this.fruits);
+        System.out.println(this.timeout);
+        System.out.println(this.username);
     }
 
 }
