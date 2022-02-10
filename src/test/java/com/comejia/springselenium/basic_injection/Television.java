@@ -1,4 +1,4 @@
-package com.comejia.springselenium;
+package com.comejia.springselenium.basic_injection;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

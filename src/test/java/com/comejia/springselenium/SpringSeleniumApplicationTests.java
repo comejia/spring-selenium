@@ -1,5 +1,6 @@
 package com.comejia.springselenium;
 
+import com.comejia.springselenium.basic_injection.*;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -35,6 +36,9 @@ class SpringSeleniumApplicationTests {
 
     @Autowired
     private Television tv;
+
+    @Value("${lista:a,b,c}")
+    private List<String> list;
 
 	@Test
     @DisplayName("Dependency injection whitout Spring")
@@ -91,8 +95,13 @@ class SpringSeleniumApplicationTests {
     @Test
     @DisplayName("Injection to external object")
     void postConstructAndPreDestroy() {
-        //Faker faker = new Faker();
         this.tv.playMovie();
+    }
+
+    @Test
+    @DisplayName("Injection to external object")
+    void listValueInyection() {
+        System.out.println("List: " + list);
     }
 
 }
