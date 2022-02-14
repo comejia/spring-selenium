@@ -1,6 +1,5 @@
-package com.comejia.springselenium;
+package com.comejia.springselenium.basic_injection;
 
-import com.comejia.springselenium.basic_injection.*;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
