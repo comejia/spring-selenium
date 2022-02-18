@@ -4,6 +4,7 @@ import com.comejia.springselenium.SpringBaseTestNG;
 import com.comejia.springselenium.pages.google.GooglePage;
 import com.comejia.springselenium.utils.ScreenShotUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -15,6 +16,7 @@ public class GoogleTest extends SpringBaseTestNG {
     @Autowired
     private GooglePage googlePage;
 
+    @Lazy
     @Autowired
     private ScreenShotUtil screenShotUtil;
 
@@ -26,6 +28,6 @@ public class GoogleTest extends SpringBaseTestNG {
         this.googlePage.getSearchComponent().search("spring boot");
         assertTrue(this.googlePage.getSearchResult().isAt());
         assertTrue(this.googlePage.getSearchResult().getCount() > 2);
-        this.screenShotUtil.takeScreenshot("screen_util.png");
+        //this.screenShotUtil.takeScreenshot("screen_util.png");
     }
 }
