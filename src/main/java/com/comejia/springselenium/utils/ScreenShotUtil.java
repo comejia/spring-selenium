@@ -25,7 +25,7 @@ public class ScreenShotUtil {
 
     @PostConstruct
     private void init() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {

@@ -18,6 +18,7 @@ public class GooglePage extends Base {
     private String url;
 
     public void goTo() {
+        System.out.println("URLLLL: " + url);
         this.driver.get(url);
     }
 
