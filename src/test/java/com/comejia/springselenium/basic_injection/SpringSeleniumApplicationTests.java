@@ -1,6 +1,5 @@
-package com.comejia.springselenium;
+package com.comejia.springselenium.basic_injection;
 
-import com.comejia.springselenium.basic_injection.*;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -42,7 +41,7 @@ class SpringSeleniumApplicationTests {
 
 	@Test
     @DisplayName("Dependency injection whitout Spring")
-	void injectionWhitoutSpring() {
+	void injectionWithoutSpring() {
         Address address = new Address();
         Salary salary = new Salary();
 
