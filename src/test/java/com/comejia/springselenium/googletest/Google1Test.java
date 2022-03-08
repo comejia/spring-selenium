@@ -38,6 +38,6 @@ public class Google1Test extends SpringBaseTestNG {
         this.googlePage.getSearchComponent().search("spring boot ");
         assertTrue(this.googlePage.getSearchResult().isAt());
         assertTrue(this.googlePage.getSearchResult().getCount() > 2);
-        this.screenShotUtil.takeScreenshot("screen_util.png");
+        this.screenShotUtil.takeScreenshot(".png");
     }
 }

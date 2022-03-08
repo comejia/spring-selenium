@@ -21,7 +21,7 @@ public class WebDriverConfig {
     }
 
     @Bean
-    @Scope("prototype")
+    @Scope("browserscope")
     //@Primary
     //@ConditionalOnProperty(name = "browser", havingValue = "chrome")
     @ConditionalOnMissingBean

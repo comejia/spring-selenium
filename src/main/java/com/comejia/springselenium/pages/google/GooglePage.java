@@ -34,4 +34,8 @@ public class GooglePage extends Base {
     public SearchResult getSearchResult() {
         return searchResult;
     }
+
+    public void close() {
+        this.driver.quit();
+    }
 }

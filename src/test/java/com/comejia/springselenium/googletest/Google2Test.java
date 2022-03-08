@@ -38,6 +38,7 @@ public class Google2Test extends SpringBaseTestNG {
         this.googlePage.getSearchComponent().search("selenium ");
         assertTrue(this.googlePage.getSearchResult().isAt());
         assertTrue(this.googlePage.getSearchResult().getCount() > 2);
-        this.screenShotUtil.takeScreenshot("screen_util.png");
+        this.screenShotUtil.takeScreenshot(".png");
+        //this.googlePage.close();
     }
 }
