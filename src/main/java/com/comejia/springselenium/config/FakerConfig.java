@@ -1,10 +1,10 @@
 package com.comejia.springselenium.config;
 
+import com.comejia.springselenium.annotation.LazyConfiguration;
 import com.github.javafaker.Faker;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
+@LazyConfiguration
 public class FakerConfig {
 
     @Bean
