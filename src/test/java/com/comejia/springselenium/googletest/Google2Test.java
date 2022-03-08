@@ -1,11 +1,11 @@
 package com.comejia.springselenium.googletest;
 
 import com.comejia.springselenium.SpringBaseTestNG;
+import com.comejia.springselenium.kelvin.annotation.LazyAutowired;
 import com.comejia.springselenium.pages.google.GooglePage;
-import com.comejia.springselenium.utils.ScreenShotUtil;
+import com.comejia.springselenium.kelvin.service.ScreenShotService;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
@@ -23,12 +23,11 @@ public class Google2Test extends SpringBaseTestNG {
         driver.quit();
     }
 
-    @Autowired
+    @LazyAutowired
     private GooglePage googlePage;
 
-    @Lazy
-    @Autowired
-    private ScreenShotUtil screenShotUtil;
+    @LazyAutowired
+    private ScreenShotService screenShotService;
 
     @Test
     public void googleTest() throws IOException {
@@ -38,7 +37,7 @@ public class Google2Test extends SpringBaseTestNG {
         this.googlePage.getSearchComponent().search("selenium ");
         assertTrue(this.googlePage.getSearchResult().isAt());
         assertTrue(this.googlePage.getSearchResult().getCount() > 2);
-        this.screenShotUtil.takeScreenshot(".png");
+        this.screenShotService.takeScreenshot(".png");
         //this.googlePage.close();
     }
 }

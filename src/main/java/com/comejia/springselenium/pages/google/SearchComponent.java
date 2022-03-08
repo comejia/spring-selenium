@@ -1,6 +1,6 @@
 package com.comejia.springselenium.pages.google;
 
-import com.comejia.springselenium.annotation.PageFragment;
+import com.comejia.springselenium.kelvin.annotation.PageFragment;
 import com.comejia.springselenium.pages.Base;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
