@@ -1,11 +1,11 @@
 package com.comejia.springselenium.pages.google;
 
+import com.comejia.springselenium.kelvin.annotation.Page;
 import com.comejia.springselenium.pages.Base;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-@Component
+@Page
 public class GooglePage extends Base {
 
     @Autowired
@@ -33,5 +33,9 @@ public class GooglePage extends Base {
 
     public SearchResult getSearchResult() {
         return searchResult;
+    }
+
+    public void close() {
+        this.driver.quit();
     }
 }
