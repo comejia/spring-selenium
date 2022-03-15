@@ -20,4 +20,12 @@
             <class name="com.comejia.springselenium.googletest.Google2Test" />
         </classes>
     </test>
+
+    <test name="test-5">
+        <parameter name="dobFrom" value="1995-01-01"/>
+        <parameter name="dobTo" value="1997-01-01"/>
+        <classes>
+            <class name="com.comejia.springselenium.visa.UserVisaTest" />
+        </classes>
+    </test>
 </suite>
