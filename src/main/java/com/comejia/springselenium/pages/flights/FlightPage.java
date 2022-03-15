@@ -1,6 +1,7 @@
 package com.comejia.springselenium.pages.flights;
 
 import com.comejia.springselenium.kelvin.annotation.Page;
+import com.comejia.springselenium.kelvin.annotation.TakeScreenshot;
 import com.comejia.springselenium.pages.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,6 +19,7 @@ public class FlightPage extends Base {
         this.driver.get(url);
     }
 
+    @TakeScreenshot
     public List<String> getLabels() {
         return this.elements.stream()
                 .map(WebElement::getText)
