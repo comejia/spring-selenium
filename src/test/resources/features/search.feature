@@ -1,5 +1,6 @@
 Feature: Google search
 
+  @google
   Scenario Outline: I want to search on google site
     Given I am on the google site
     When I enter "<keyword>" as a keyword
@@ -10,4 +11,4 @@ Feature: Google search
     | keyword     | count       |
     | selenium    | 2           |
     | java        | 5           |
-    | spring      | 3           |
+    | spring      | 50           |

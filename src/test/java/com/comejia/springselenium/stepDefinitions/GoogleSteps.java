@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.testng.Assert.assertTrue;
 
 @SpringBootTest
-public class GoogleStep {
+public class GoogleSteps {
 
     @LazyAutowired
     private GooglePage googlePage;
@@ -29,7 +29,6 @@ public class GoogleStep {
     @Then("I should see search results page")
     public void clickSearch() {
         assertTrue(this.googlePage.getSearchResult().isAt());
-        
     }
 
     @And("I should see at least {int} results")
