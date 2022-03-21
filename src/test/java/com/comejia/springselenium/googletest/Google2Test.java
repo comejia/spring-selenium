@@ -1,11 +1,11 @@
 package com.comejia.springselenium.googletest;
 
 import com.comejia.springselenium.SpringBaseTestNG;
+import com.comejia.springselenium.kelvin.annotation.LazyAutowired;
 import com.comejia.springselenium.pages.google.GooglePage;
-import com.comejia.springselenium.utils.ScreenShotUtil;
+import com.comejia.springselenium.kelvin.service.ScreenShotService;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
@@ -13,8 +13,7 @@ import java.io.IOException;
 
 import static org.testng.AssertJUnit.assertTrue;
 
-public class GoogleTest extends SpringBaseTestNG {
-
+public class Google2Test extends SpringBaseTestNG {
 
     @Autowired
     private WebDriver driver;
@@ -24,21 +23,21 @@ public class GoogleTest extends SpringBaseTestNG {
         driver.quit();
     }
 
-    @Autowired
+    @LazyAutowired
     private GooglePage googlePage;
 
-    @Lazy
-    @Autowired
-    private ScreenShotUtil screenShotUtil;
+    @LazyAutowired
+    private ScreenShotService screenShotService;
 
     @Test
     public void googleTest() throws IOException {
         this.googlePage.goTo();
         assertTrue(this.googlePage.isAt());
 
-        this.googlePage.getSearchComponent().search("environment ");
+        this.googlePage.getSearchComponent().search("selenium ");
         assertTrue(this.googlePage.getSearchResult().isAt());
         assertTrue(this.googlePage.getSearchResult().getCount() > 2);
-        this.screenShotUtil.takeScreenshot("screen_util.png");
+        this.screenShotService.takeScreenshot(".png");
+        //this.googlePage.close();
     }
 }

@@ -1,13 +1,13 @@
 package com.comejia.springselenium.pages.google;
 
+import com.comejia.springselenium.kelvin.annotation.PageFragment;
 import com.comejia.springselenium.pages.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+@PageFragment
 public class SearchResult extends Base {
 
     @FindBy(css = "div.VwiC3b")
